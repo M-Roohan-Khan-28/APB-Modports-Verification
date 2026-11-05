@@ -1,0 +1,19 @@
+{
+  "source_repository": "https://github.com/rouhan28may-droid/hdl-labs.git",
+  "source_commit": "df8d6f66898a08df75cd2071ddac7bbba9ba9b16",
+  "source_folder": "projects/apb-modports",
+  "extraction": "Source snapshot, not a new implementation or new verification run.",
+  "source_sha256": {
+    "docs/verification_plan.md": "1dcfdc92f8b1fe1fa751c8ed5f5f176a4d80fec4f10ed1bd2f00bf51f4a73b03",
+    "SOURCE_README.md": "01d04256f40c309c3dac2721da0353f5ca5d36679c4a07f440c227afd60563a1",
+    "reports/compile.log": "e3f7f3f1c625adad4d0bb846c390ef44e48ca1baa8d5f319e6554f40e2fecef8",
+    "reports/README.md": "ccdaf75f775804c6ccfcc50403e848888714b37d8f3641542c80387479dd366f",
+    "reports/simulation.log": "b411f723b30d8eb272e873c9225ac24c99f85a5a6c5b23a09494e5fbfd71233a",
+    "rtl/design.sv": "f3d54c70edfe841c807d9f589cdaa5832560bab8cc74b36a90ecb5afaac2ed00",
+    "scripts/run_sim.ps1": "76d5e6de4058cfe3a8904a5f4cc05af8e145cc9bb705c0fc0cea2ee154aa1009",
+    "sim/filelist.f": "5a9b0b8af8b3475ca84741fd64d0c78c990ba521d0323b7760a2284dfb048b8e",
+    "sim/run.sh": "3782096762de59322c7c2e7e17e5482b5ef3068716594db5837a66bcc4e471ba",
+    "tb/tb_top.sv": "3563c91e63e880d6c0fce5d55aabd65bb1ac045a5790c6810d5005c0f989b972",
+    "waves/README.md": "6d08b508a8afadffbd00b6cc401f977b87432d22ecda2064d6a2d3288999b944"
+  }
+}
