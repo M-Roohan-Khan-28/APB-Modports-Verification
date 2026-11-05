@@ -1,14 +1,12 @@
-# APB RAM with master/slave modports
+# APB RAM with Master and Slave Modports
 
-**Verilog / SystemVerilog · RTL and verification exercise**
+**SystemVerilog · Interface direction control · Directed simulation**
 
-This standalone repository preserves the original `apb-modports` exercise from my `hdl-labs` collection. Original RTL, testbench, simulator scripts and existing evidence are preserved byte-for-byte. This packaging step is not a new simulation or a claim of full protocol compliance.
+A four-word, 32-bit APB RAM with explicit master and slave modports. The interface defines the signal directions for each role, while the slave handles aligned word accesses and reports invalid addresses through `PSLVERR`.
 
-## Overview and original documentation
+The repository retains its directed readback testbench, simulation entry points, and historical results. It is a separate implementation from the 64-word APB interface project.
 
-Preserve the separate modport exercise. Explain how it differs from the interface project; add independent checks later.
-
-See [the original exercise README](SOURCE_README.md) for its existing specification, source layout and tool instructions. The text above identifies review goals; it does not claim that new enhancements have already been implemented.
+See [original source documentation](SOURCE_README.md) for the baseline files and the verification-status section below for the available evidence.
 
 ## Run
 
@@ -32,4 +30,4 @@ Source commit: `df8d6f66898a08df75cd2071ddac7bbba9ba9b16`. Source path: `project
 
 ## Next engineering work
 
-Review the specification and implementation, run the supplied tests, add independently justified checks, and record actual results and known limitations. Waveform screenshots can be added later; no fabricated screenshots or coverage figures are needed.
+Planned tests will cover all implemented addresses, invalid-address responses, reset interruption, and back-to-back transfers. New results will be recorded separately from the retained source logs.
