@@ -10,17 +10,48 @@ See [original source documentation](SOURCE_README.md) for the baseline files and
 
 ## Run
 
-From the repository root, with the required ModelSim/Questa executables and appropriate licence available:
+From the repository root, with Python 3.9+ and compatible ModelSim/Questa
+`vlib`, `vlog`, and `vsim` available, use a fresh output directory:
 
-```bash
-bash sim/run.sh
+```powershell
+$env:MODELSIM_BIN = 'C:\intelFPGA\20.1\modelsim_ase\win32aloem'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run_sim.ps1 -OutputDir C:\short\apb-modports-unique -CaptureWave
 ```
 
-Existing Windows instructions, where supplied, are retained in `scripts/`. Do not assume the testbench will run in every edition of a simulator. Check [the retained validation report](source-docs/VALIDATION.md) and the original README.
+The shell launcher is `bash sim/run.sh /new/output/path` on systems with
+Python 3 and a compatible simulator; only `bash -n` was run here, so no Linux
+simulation is claimed. The new runner refuses to overwrite output, requires
+exact counts and pass markers, checks transcript errors/fatals even if the
+simulator exits zero, and has 120-second per-command bounds. Historical
+reports are unchanged. See the [retained validation report](source-docs/VALIDATION.md)
+for earlier evidence.
 
 ## Verification status
 
-The included logs are historical evidence copied from the source repository. **The extracted copy has not been simulated by this extraction script.** Re-run before reporting fresh results. Some original exercises were blocked by verification-feature licence restrictions; those restrictions are not changed by packaging.
+Extraction-time logs remain historical. At source commit
+`df4cd7d1ebe1cfed0dbb5dd6b5326fb5f8d44777`, a clean-source run passed
+the preserved **2 readback checks** and **12,488 independent comparisons**.
+The new bench exercised all **512 address-direction probes** (256 addresses x
+read/write), 1,049 additional guard transfers, 507 observed error transfers,
+and a reset-cancelled write using deterministic data seed `0x28AB4B05`.
+ModelSim Intel FPGA Starter Edition `vsim 2020.1 Simulator 2020.02 Feb 28
+2020` and the wrapper exited 0. [Raw logs and JSON](reports/technical-completion-2026-11-07/passing/)
+record the real result. A disposable range fault made address `0x10` legal:
+the old two-check bench still passed, while the new oracle reported
+`APB_CONTRACT_MISMATCH` and the wrapper exited 1. The [fault evidence](reports/technical-completion-2026-11-07/range-fault/)
+is separate from active RTL.
+
+The [measured APB transaction figure](reports/technical-completion-2026-11-07/passing/apb-contract.svg),
+[address-error window](reports/technical-completion-2026-11-07/passing/apb-boundary.svg),
+and [reset window](reports/technical-completion-2026-11-07/passing/apb-reset.svg)
+come from the [raw simulator VCD](reports/technical-completion-2026-11-07/passing/apb-contract.vcd).
+The sibling JSON files record VCD hash, 1 ps timebase and exact crops.
+[Verification plan](docs/verification_plan.md) states the bounded contract.
+
+Installed Starter edition did not execute the probed randomization,
+covergroups, SVA, or UVM flows. Those remain blocked/NOT RUN; portable check
+counts do not establish coverage closure or full APB compliance. Synthesis,
+timing, FPGA, and hardware were not run.
 
 ## Provenance and changes
 
@@ -30,4 +61,5 @@ Source commit: `df8d6f66898a08df75cd2071ddac7bbba9ba9b16`. Source path: `project
 
 ## Next engineering work
 
-Planned tests will cover all implemented addresses, invalid-address responses, reset interruption, and back-to-back transfers. New results will be recorded separately from the retained source logs.
+This is a four-word APB lab, not a complete peripheral subsystem. A separate
+future milestone can add licensed UVM/coverage or hardware-target evidence.
