@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "origin": "simulator",
+  "source_filename": "apb-contract.vcd",
+  "source_sha256": "37b3d7e4996643067bf59bfb7c19ddfb2a78926ca3e34a04dc95813395f0d309",
+  "timescale": "1ps",
+  "start_tick": 300000,
+  "end_tick": 650000,
+  "source_final_tick": 46900000,
+  "signals": [
+    {
+      "name": "apb_contract_test.PCLK",
+      "code": "!",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "apb_contract_test.PRESETn",
+      "code": "\"",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "apb_contract_test.bus.PADDR",
+      "code": "#",
+      "width": 8,
+      "kind": "reg",
+      "bit_range": "[7:0]"
+    },
+    {
+      "name": "apb_contract_test.bus.PSEL",
+      "code": "$",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "apb_contract_test.bus.PENABLE",
+      "code": "%",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "apb_contract_test.bus.PWRITE",
+      "code": "&",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "apb_contract_test.bus.PWDATA",
+      "code": "'",
+      "width": 32,
+      "kind": "reg",
+      "bit_range": "[31:0]"
+    },
+    {
+      "name": "apb_contract_test.bus.PRDATA",
+      "code": "(",
+      "width": 32,
+      "kind": "reg",
+      "bit_range": "[31:0]"
+    },
+    {
+      "name": "apb_contract_test.bus.PREADY",
+      "code": ")",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "apb_contract_test.bus.PSLVERR",
+      "code": "*",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    }
+  ],
+  "same_tick_collapses": 10,
+  "functional_result": "NOT_ASSESSED_BY_RENDERER"
+}

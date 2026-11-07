@@ -1,0 +1,27 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit apb_contract_test -do "vcd file apb-contract.vcd; vcd add /apb_contract_test/PCLK; vcd add /apb_contract_test/PRESETn; vcd add /apb_contract_test/bus/PADDR; vcd add /apb_contract_test/bus/PSEL; vcd add /apb_contract_test/bus/PENABLE; vcd add /apb_contract_test/bus/PWRITE; vcd add /apb_contract_test/bus/PWDATA; vcd add /apb_contract_test/bus/PRDATA; vcd add /apb_contract_test/bus/PREADY; vcd add /apb_contract_test/bus/PSLVERR; run -all; quit -code 0" 
+# Start time: 21:10:26 on Nov 07,2026
+# Loading sv_std.std
+# Loading work.apb_contract_test
+# Loading work.apb_if
+# Loading work.apb_slave_ram
+# vcd file apb-contract.vcd
+#  vcd add /apb_contract_test/PCLK
+#  vcd add /apb_contract_test/PRESETn
+#  vcd add /apb_contract_test/bus/PADDR
+#  vcd add /apb_contract_test/bus/PSEL
+#  vcd add /apb_contract_test/bus/PENABLE
+#  vcd add /apb_contract_test/bus/PWRITE
+#  vcd add /apb_contract_test/bus/PWDATA
+#  vcd add /apb_contract_test/bus/PRDATA
+#  vcd add /apb_contract_test/bus/PREADY
+#  vcd add /apb_contract_test/bus/PSLVERR
+#  run -all
+# APB_MODPORT_CONTRACT_PASS probes=512 guards=1049 checks=12488 errors=507 resets=1 seed=0x28AB4B05
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/modports/tb/apb_contract_test.sv(105)
+#    Time: 46901 ns  Iteration: 0  Instance: /apb_contract_test
+# End time: 21:10:27 on Nov 07,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

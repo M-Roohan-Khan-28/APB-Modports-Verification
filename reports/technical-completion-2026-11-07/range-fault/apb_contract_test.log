@@ -1,0 +1,17 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit apb_contract_test -do "run -all; quit -code 0" 
+# Start time: 21:10:44 on Nov 07,2026
+# Loading sv_std.std
+# Loading work.apb_contract_test
+# Loading work.apb_if
+# Loading work.apb_slave_ram
+# run -all
+# ** Fatal: APB_CONTRACT_MISMATCH access error addr=10 wanted=00000001 observed=00000000
+#    Time: 411 ns  Scope: apb_contract_test.check_value File: C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/modports/tb/apb_contract_test.sv Line: 25
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/modports/tb/apb_contract_test.sv(25)
+#    Time: 411 ns  Iteration: 0  Instance: /apb_contract_test
+# End time: 21:10:45 on Nov 07,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

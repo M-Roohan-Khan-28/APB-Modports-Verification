@@ -1,0 +1,64 @@
+{
+  "repository": "APB-Modports-Verification",
+  "source_revision": "df4cd7d1ebe1cfed0dbb5dd6b5326fb5f8d44777",
+  "source_dirty": false,
+  "sources": [
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\modports\\rtl\\design.sv",
+      "sha256": "f3d54c70edfe841c807d9f589cdaa5832560bab8cc74b36a90ecb5afaac2ed00"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\modports\\tb\\tb_top.sv",
+      "sha256": "3563c91e63e880d6c0fce5d55aabd65bb1ac045a5790c6810d5005c0f989b972"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\modports\\tb\\apb_contract_test.sv",
+      "sha256": "43bfaf921a25ba37254cc2c624ef587431ddfbdccaac92ce0290b24cd5c01214"
+    }
+  ],
+  "seed": "0x28AB4B05 (xorshift32 write data)",
+  "timeout_seconds_per_command": 120,
+  "simulations": [
+    {
+      "top": "tb_apb_modport",
+      "simulator_exit_code": 0,
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "tb_apb_modport",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "status": "PASS",
+      "checks": 2
+    },
+    {
+      "top": "apb_contract_test",
+      "simulator_exit_code": 0,
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "apb_contract_test",
+        "-do",
+        "vcd file apb-contract.vcd; vcd add /apb_contract_test/PCLK; vcd add /apb_contract_test/PRESETn; vcd add /apb_contract_test/bus/PADDR; vcd add /apb_contract_test/bus/PSEL; vcd add /apb_contract_test/bus/PENABLE; vcd add /apb_contract_test/bus/PWRITE; vcd add /apb_contract_test/bus/PWDATA; vcd add /apb_contract_test/bus/PRDATA; vcd add /apb_contract_test/bus/PREADY; vcd add /apb_contract_test/bus/PSLVERR; run -all; quit -code 0"
+      ],
+      "status": "PASS",
+      "checks": 12488,
+      "probes": 512,
+      "guards": 1049,
+      "errors": 507,
+      "resets": 1
+    }
+  ],
+  "overall": "PASS",
+  "simulator_version": "Model Technology ModelSim - INTEL FPGA STARTER EDITION vsim 2020.1 Simulator 2020.02 Feb 28 2020",
+  "waveform": {
+    "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-modports-committed-2026-11-07\\apb-contract.vcd",
+    "sha256": "37b3d7e4996643067bf59bfb7c19ddfb2a78926ca3e34a04dc95813395f0d309"
+  },
+  "elapsed_seconds": 3.38
+}

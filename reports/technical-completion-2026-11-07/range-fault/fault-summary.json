@@ -1,0 +1,9 @@
+﻿{
+    "source_revision":  "df4cd7d1ebe1cfed0dbb5dd6b5326fb5f8d44777",
+    "source_sha256":  "F3D54C70EDFE841C807D9F589CDAA5832560BAB8CC74B36A90ECB5AFAAC2ED00",
+    "mutant_sha256":  "1CCB74C908AFD248E716A2C97C3D83DF7ADA14F649B1A1CE9B24D9D2E4D0A007",
+    "mutation":  "Treat address 0x10 as valid",
+    "wrapper_exit_code":  1,
+    "legacy_pass":  true,
+    "contract_mismatch":  true
+}
