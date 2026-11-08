@@ -1,5 +1,8 @@
 # APB RAM with Master and Slave Modports
 
+See the [separate reusable APB UVM adapter](docs/UVM_ADAPTER.md) for the new
+deterministic UVM/SVA milestone and its explicit coverage/licence limits.
+
 **SystemVerilog · Interface direction control · Directed simulation**
 
 A four-word, 32-bit APB RAM with explicit master and slave modports. The interface defines the signal directions for each role, while the slave handles aligned word accesses and reports invalid addresses through `PSLVERR`.
